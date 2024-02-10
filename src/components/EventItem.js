@@ -60,6 +60,7 @@ const EventItem = (props) => {
             <CardActions>
               <Link 
               to={event.eventLink}
+              target="__blank"
               >
               <Button
               variant="contained"
