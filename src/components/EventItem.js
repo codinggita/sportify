@@ -59,7 +59,7 @@ const EventItem = (props) => {
             </CardContent>
             <CardActions>
               <Link 
-              to="https://maps.app.goo.gl/c11byLMiYE24y9QD9"
+              to={event.eventLink}
               >
               <Button
               variant="contained"

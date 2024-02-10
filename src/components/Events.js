@@ -46,7 +46,8 @@ const Events = (props) => {
     eventName,
     eventDescription,
     eventDate,
-    eventLocation
+    eventLocation,
+    eventLink
   ) => {
     const response = await fetch(`${host}/update/event/${id}`, {
       method: "PUT",
@@ -59,6 +60,7 @@ const Events = (props) => {
         eventDescription,
         eventDate,
         eventLocation,
+        eventLink
       }),
     });
 
@@ -72,6 +74,7 @@ const Events = (props) => {
         newEvents[index].eventDescription = eventDescription;
         newEvents[index].eventDate = eventDate;
         newEvents[index].eventLocation = eventLocation;
+        newEvents[index].eventLink = eventLink;
         break;
       }
     }
@@ -84,6 +87,7 @@ const Events = (props) => {
     eeventDescription: "",
     eeventDate: "",
     eeventLocation: "",
+    eeventLink:"",
   });
 
   const onChange = (e) => {
@@ -99,6 +103,7 @@ const Events = (props) => {
       eeventDescription: currentEvent.eventDescription,
       eeventDate: currentEvent.eventDate,
       eeventLocation: currentEvent.eventLocation,
+      eeventLink: currentEvent.eventLink,
     });
   };
   const close = () => setOpen(false);
@@ -109,7 +114,8 @@ const Events = (props) => {
       event.eeventName,
       event.eeventDescription,
       event.eeventDate,
-      event.eeventLocation
+      event.eeventLocation,
+      event.eeventLink
     );
     setOpen(false);
     e.preventDefault();
@@ -160,26 +166,26 @@ const Events = (props) => {
               fullWidth
               margin="normal"
             />
+            <TextField
+              onChange={onChange}
+              value={event.eeventLink}
+              name="eeventLink"
+              label="eventLink"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+            />
             <Button
               disabled={
-<<<<<<< HEAD
                 event.eeventName.length < 1 ||
                 event.eeventDescription.length < 1
-=======
-                event.eeventName.length < 5 ||
-                event.eeventDescription.length < 5
->>>>>>> c8e89c0b26b879d71360615db8bcc4211ebed81a
               }
               variant="contained"
               color="primary"
               type="submit"
               onClick={handleClick}
             >
-<<<<<<< HEAD
               Update
-=======
-              Save
->>>>>>> c8e89c0b26b879d71360615db8bcc4211ebed81a
             </Button>
           </form>
         </Box>

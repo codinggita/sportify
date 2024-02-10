@@ -17,6 +17,8 @@ const Create = (props) => {
     const eventDate = data.get("eventDate");
     const eventLocation = data.get("eventLocation");
     const eventDescription = data.get("eventDescription");
+    const eventLink = data.get("eventLink");
+
 
     const response = await fetch(`http://localhost:5000/newevent`, {
       method: "POST",
@@ -28,6 +30,7 @@ const Create = (props) => {
         eventDate,
         eventLocation,
         eventDescription,
+        eventLink,
       }),
     });
 
@@ -76,6 +79,13 @@ const Create = (props) => {
               fullWidth
               label="Location"
               name="eventLocation"
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              label="eventLink"
+              name="eventLink"
             />
             <TextField
               margin="normal"
