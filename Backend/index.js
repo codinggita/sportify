@@ -8,7 +8,7 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: "https://sportify-pareen.netlify.app",
+    origin: "http://localhost:3000",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
@@ -34,6 +34,7 @@ const EventSchema = new mongoose.Schema({
   eventLocation: String,
   eventDate: Date,
   eventDescription: String,
+  eventLink: String,
 });
 
 const Event = mongoose.model("Event", EventSchema);
@@ -54,7 +55,7 @@ app.post("/newevent", async (req, res) => {
   let success = false;
   // Create a new event
   try {
-    const { eventName, eventDate, eventDescription, eventLocation } = req.body;
+    const { eventName, eventDate, eventDescription, eventLocation, eventLink } = req.body;
     if (!eventName || !eventDescription) {
       return res.status(400).json({
         error: "Title and description are required for creating an event.",
@@ -65,6 +66,7 @@ app.post("/newevent", async (req, res) => {
       eventDescription,
       eventDate,
       eventLocation,
+      eventLink,
     });
     const savedEvent = await event.save();
     success = true;
@@ -175,6 +177,9 @@ app.put("/update/event/:id", async (req, res) => {
     }
     if (eventLocation) {
       newEvent.eventLocation = eventLocation;
+    }
+    if (eventLink) {
+      newEvent.eventLink = eventLink;
     }
 
     let event = await Event.findById(req.params.id);
