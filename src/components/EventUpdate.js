@@ -17,6 +17,7 @@ const Update = (props) => {
     const eventDate = data.get("eventDate");
     const eventLocation = data.get("eventLocation");
     const eventDescription = data.get("eventDescription");
+    const eventLink = data.get("eventLink")
 
     const response = await fetch(`http://localhost:5000/newevent`, {
       method: "POST",
@@ -28,6 +29,7 @@ const Update = (props) => {
         eventDate,
         eventLocation,
         eventDescription,
+        eventLink,
       }),
     });
 
@@ -76,6 +78,13 @@ const Update = (props) => {
               fullWidth
               label="Location"
               name="eventLocation"
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              label="eventLink"
+              name="eventLink"
             />
             <TextField
               margin="normal"
