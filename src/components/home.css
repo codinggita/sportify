@@ -1,16 +1,22 @@
 /* Define styles for larger screens */
 @media (min-width: 768px) {
-    .card {
-      max-width: 100%;
-      margin: 0 20%;
-    }
+  .card {
+    max-width: 100%;
+    margin: 0 20%;
   }
-  
-  /* Define styles for smaller screens */
-  @media (max-width: 767px) {
-    .card {
-      max-width: 100%;
-      margin: 0 10px;
-    }
+}
+
+/* Define styles for smaller screens */
+@media (max-width: 767px) {
+  .card {
+    max-width: 100%;
+    margin: 0 10px;
   }
-  
+}
+
+main.homePage{
+  background-color: aqua;
+  border-collapse: collapse;
+  padding-top: 0.1%;
+  padding-bottom: 0.1%;
+}
