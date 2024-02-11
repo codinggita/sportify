@@ -195,8 +195,8 @@ const Events = (props) => {
           Start adding events right away
         </Typography>
       ) : (
-        <Typography variant="h5" component="div">
-          Listed Events
+        <Typography variant="h4" component="div">
+          Play as you like
         </Typography>
       )}
       <div className="notes-cards-column">
