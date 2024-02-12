@@ -11,6 +11,6 @@ https://sportify-pareen.netlify.app/
 Backend Deploy Link
 https://sportify-pareen.onrender.com
 
-video
+Demo Video
 [Watch the video
 ](https://drive.google.com/file/d/1tIXtX2Z5fW1O5QtowEF4x0Anvyo8m9uQ/view?usp=drive_link)https://drive.google.com/file/d/1tIXtX2Z5fW1O5QtowEF4x0Anvyo8m9uQ/view?usp=drive_link
